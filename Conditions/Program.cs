@@ -13,15 +13,25 @@
             Console.WriteLine("ENTER YOUR NUMBER :");
             int entier = int.Parse(Console.ReadLine());
 
-            if (entier < limiteInf)
+            if (entier == limiteSup)
+            {
+                Console.WriteLine($"You entered {entier}, which is the same than the second limit ({limiteSup})");
+                Console.WriteLine($"RESULT : {limiteSup}");
+            }
+            else if (entier == limiteInf)
+            {
+                Console.WriteLine($"You entered {entier}, which is the same than the first limit ({limiteInf})");
+                Console.WriteLine($"RESULT : {limiteInf}");
+            }
+            else if (entier < limiteInf)
             {
                 Console.WriteLine($"You entered {entier}, which is less than the first limit ({limiteInf}).");
                 Console.WriteLine($"RESULT : {limiteInf}");
             }
-            else if (entier > limiteSup)
+            else if (entier >limiteSup || entier > limiteInf)
             {
-                Console.WriteLine($"You entered {entier}, which is superior than the second limit ({limiteSup}).");
-                Console.WriteLine($"RESULT : {limiteSup}");
+                Console.WriteLine($"You entered {entier}, which is superior than the first limit ({limiteInf}).");
+                Console.WriteLine($"RESULT : {limiteInf}");
             }
             else
             {
@@ -31,3 +41,4 @@
         }
     }
 }
+
